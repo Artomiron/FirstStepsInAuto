@@ -14,7 +14,7 @@ public class classOne {
         driver.manage().window().maximize();
         driver.get("https://rozetka.com.ua/ua/");
         System.out.println("Rozetka opened");
-        System.out.println("Rozetka opened 2.0");
+        System.out.println("Rozetka opened 2.1");
         driver.quit();
     }
 
