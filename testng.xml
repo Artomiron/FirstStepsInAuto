@@ -1,7 +1,0 @@
-<suite name="FirstTestSuite" verbose="1" >
-    <test name="FirstTest" >
-        <classes>
-            <class name="packageOne.classOne" />
-        </classes>
-    </test>
-</suite>

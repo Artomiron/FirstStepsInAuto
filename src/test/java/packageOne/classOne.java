@@ -1,8 +1,10 @@
 package packageOne;
 
-import org.junit.Test;
+//import org.junit.Test; пришлось закоментить и добавить строку ниже. Инете TestSuit из testng.xml не запускался
+import org.testng.annotations.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
 
 
 public class classOne {
