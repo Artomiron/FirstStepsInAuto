@@ -3,6 +3,7 @@ package com.dice;
 import base.BaseTest;
 import org.testng.annotations.Test;
 import pages.LogInPage;
+import pages.ProfilePage;
 
 public class LogInTest extends BaseTest {
     @Test
@@ -15,8 +16,8 @@ public class LogInTest extends BaseTest {
         loginPage.fillUpEmailAndPassword("s2b.artem@gmail.com", "slim1984");
         // set field login and password
 
-
-        loginPage.pushSingingButton();
+        ProfilePage profilePage = loginPage.pushSingingButton();
+        profilePage.waitForProfilePageLoad();
         // push the button login
         // varification
         // - user name correct
