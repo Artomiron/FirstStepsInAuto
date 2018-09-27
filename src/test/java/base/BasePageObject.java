@@ -54,4 +54,13 @@ public class BasePageObject<T> {
         WebDriverWait wait = new WebDriverWait(driver, timeOutInSecongs);
         wait.until(condition);
     }
+
+    public String getTitle()
+    {
+        return driver.getTitle();
+    }
+
+    protected String getText(By element){
+        return find(element).getText();
+    }
 }

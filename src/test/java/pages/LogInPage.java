@@ -22,11 +22,13 @@ public class LogInPage extends BasePageObject<LogInPage> {
     }
 
     public void fillUpEmailAndPassword(String email, String password){
+        System.out.println("Filling up email and password");
         type(email, emailField);
         type(password, passwordField);
     }
 
     public ProfilePage pushSingingButton(){
+        System.out.println("Clicking on Sing In Button");
         click(singButton);
         return new ProfilePage(driver);
     }
