@@ -11,6 +11,7 @@ public class LogInPage extends BasePageObject<LogInPage> {
     private By emailField = By.xpath("//input[@id='email']");
     private By passwordField = By.xpath("//input[@id='password']");
     private By singButton = By.xpath("//button[@type='submit']");
+    private By errorMessage = By.xpath("//span[@data-automation-id='login-failure-help-message']");
 
     public LogInPage(WebDriver driver){
         super(driver);
@@ -31,5 +32,11 @@ public class LogInPage extends BasePageObject<LogInPage> {
         System.out.println("Clicking on Sing In Button");
         click(singButton);
         return new ProfilePage(driver);
+    }
+
+    public String getLogInErrorMessage(){
+        waitForVisabilityOf(errorMessage, 10);
+        return getText(errorMessage);
+
     }
 }
