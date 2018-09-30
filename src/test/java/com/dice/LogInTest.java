@@ -1,11 +1,15 @@
 package com.dice;
 
 import base.BaseTest;
+import base.CsvDataProvider;
 import org.testng.Assert;
 //import org.junit.Assert;
 import org.testng.annotations.Test;
 import pages.LogInPage;
 import pages.ProfilePage;
+
+import java.util.Map;
+
 
 public class LogInTest extends BaseTest {
     @Test
@@ -41,9 +45,18 @@ public class LogInTest extends BaseTest {
 
     }
 
-    @Test
-    public void negativeLoginTest(){
+    @Test(dataProvider = "CsvDataProvider", dataProviderClass = CsvDataProvider.class)
+    public void negativeLoginTest(Map<String,String> testData){
         String expectedErrorMassage = "Email and/or password incorrect.";
+
+        String testNumber = testData.get("no");
+        String email = testData.get("email");
+        String password = testData.get("password");
+        String description = testData.get("description");
+
+        System.out.println("test No #" + testNumber + " for " + description + " where \nEmail:" + email + " \nPassword: " + password);
+
+
         LogInPage loginPage = new LogInPage(driver);
 
         loginPage.openLoginPage();
