@@ -4,9 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.util.logging.Logger;
+
 public class BrowserFactory {
-    public static WebDriver getDriver(String browser) {
+    public static WebDriver getDriver(String browser, Logger log) {
         WebDriver driver;
+        log.info("Starting " + browser + " driver");
         switch (browser){
             case "firefox":
                 System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");

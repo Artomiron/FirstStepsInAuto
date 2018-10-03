@@ -12,7 +12,7 @@ public class classOne extends BaseTest {
     public  void firstTestMethod(){
         //driver.manage().window().maximize();
         driver.get("https://rozetka.com.ua/ua/");
-        System.out.println("Rozetka opened");
+        log.info("Rozetka opened");
         System.out.println("Rozetka opened 2.1");
     }
 }

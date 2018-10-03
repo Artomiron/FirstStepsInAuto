@@ -4,6 +4,8 @@ import base.BasePageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.util.logging.Logger;
+
 public class LogInPage extends BasePageObject<LogInPage> {
 
     private static final String URL = "https://www.dice.com/dashboard/logout";
@@ -13,8 +15,8 @@ public class LogInPage extends BasePageObject<LogInPage> {
     private By singButton = By.xpath("//button[@type='submit']");
     private By errorMessage = By.xpath("//span[@data-automation-id='login-failure-help-message']");
 
-    public LogInPage(WebDriver driver){
-        super(driver);
+    public LogInPage(WebDriver driver, Logger log){
+        super(driver, log);
         //toDo auto generated constructor stub
     }
 
@@ -23,15 +25,15 @@ public class LogInPage extends BasePageObject<LogInPage> {
     }
 
     public void fillUpEmailAndPassword(String email, String password){
-        System.out.println("Filling up email and password");
+        log.info("Filling up email and password");
         type(email, emailField);
         type(password, passwordField);
     }
 
     public ProfilePage pushSingingButton(){
-        System.out.println("Clicking on Sing In Button");
+        log.info("Clicking on Sing In Button");
         click(singButton);
-        return new ProfilePage(driver);
+        return new ProfilePage(driver, log);
     }
 
     public String getLogInErrorMessage(){

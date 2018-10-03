@@ -14,7 +14,7 @@ import java.util.Map;
 public class LogInTest extends BaseTest {
     @Test
     public void possitiveLoginTest(){
-        LogInPage loginPage = new LogInPage(driver);
+        LogInPage loginPage = new LogInPage(driver, log);
         String expectedPageTitle = "Seeker Dashboard - Profile";
         String correctProfileName = "Tom Soyer";
 
@@ -31,7 +31,7 @@ public class LogInTest extends BaseTest {
 
 
         // varification
-        System.out.println("Varification");
+        log.info("Varification");
         String actualTitle = profilePage.getTitle();
         /*Assert.assertTrue("Page title is not expected. \nExpected: " + expectedPageTitle + "\nActual: " + actualTitle,
                 expectedPageTitle.equals(actualTitle)); this assert is for junit*/
@@ -54,10 +54,10 @@ public class LogInTest extends BaseTest {
         String password = testData.get("password");
         String description = testData.get("description");
 
-        System.out.println("test No #" + testNumber + " for " + description + " where \nEmail:" + email + " \nPassword: " + password);
+        log.info("test No #" + testNumber + " for " + description + " where \nEmail:" + email + " \nPassword: " + password);
 
 
-        LogInPage loginPage = new LogInPage(driver);
+        LogInPage loginPage = new LogInPage(driver, log);
 
         loginPage.openLoginPage();
 
