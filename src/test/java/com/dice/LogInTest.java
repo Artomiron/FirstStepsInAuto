@@ -12,7 +12,7 @@ import java.util.Map;
 
 
 public class LogInTest extends BaseTest {
-    @Test
+    @Test (priority = 1, groups = { "positive" })
     public void possitiveLoginTest(){
         LogInPage loginPage = new LogInPage(driver, log);
         String expectedPageTitle = "Seeker Dashboard - Profile";
@@ -45,7 +45,7 @@ public class LogInTest extends BaseTest {
 
     }
 
-    @Test(dataProvider = "CsvDataProvider", dataProviderClass = CsvDataProvider.class)
+    @Test(dataProvider = "CsvDataProvider", dataProviderClass = CsvDataProvider.class, priority = 2, groups = { "negative", "broken" })
     public void negativeLoginTest(Map<String,String> testData){
         String expectedErrorMassage = "Email and/or password incorrect.";
 
