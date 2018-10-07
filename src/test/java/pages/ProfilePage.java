@@ -19,7 +19,7 @@ public class ProfilePage extends BasePageObject<ProfilePage> {
     public void waitForProfilePageLoad(){
         log.info("Wait for Profile Page Load");
         waitForVisabilityOf(editProfilerButton);
-        waitForVisabilityOf(advancedSerchButton, 10);
+        waitForVisabilityOf(advancedSerchButton, 30);
     }
 
     public boolean isCorrectProfileLoaded(String correctProfileName){

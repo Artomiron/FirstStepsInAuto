@@ -54,7 +54,7 @@ public class BasePageObject<T> {
     }
 
     private void waitFor(ExpectedCondition<WebElement> condition, Integer timeOutInSecongs){
-        timeOutInSecongs = timeOutInSecongs != null ? timeOutInSecongs : 30;
+        timeOutInSecongs = timeOutInSecongs != null ? timeOutInSecongs : 45;
         WebDriverWait wait = new WebDriverWait(driver, timeOutInSecongs);
         wait.until(condition);
     }

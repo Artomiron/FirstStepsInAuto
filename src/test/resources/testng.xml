@@ -1,0 +1,64 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<!--<suite name="FirstTestSuite" verbose="1" > -->
+<suite name="FirstTestSuite" parallel="tests" thread-count="2" >
+    <test name="LoginTest-FF" >
+        <parameter name="browser"  value="firefox"/>
+        <groups>
+            <run>
+                <include name="negative"></include>
+                <!--<exclude name="broken"></exclude>-->
+            </run>
+        </groups>
+        <classes>
+            <class name="com.dice.LogInTest">
+                <methods>
+                    <!--<include name=".*firstTestMethod.*" />
+                    <include name=".*secondTestMethod.*" />
+                    <include name="m1" /> если выключать первый метод то будет ошибка, пока не определил в чем дело-->
+                    <!--<include name="possitiveLoginTest"/> -->
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="LoginTest-CH" >
+        <parameter name="browser"  value="chrome"/>
+        <groups>
+            <run>
+                <exclude name="broken"></exclude>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.dice.LogInTest">
+                <methods>
+                    <!--<include name="possitiveLoginTest"/>-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+
+
+<!--
+ <test name="FirstTest" >
+        <classes>
+            <class name="com.dice.classOne">
+                <methods>
+                    <include name=".*firstTestMethod.*" />
+                    <include name=".*secondTestMethod.*" />
+                    <include name="m1" /> если выключать первый метод то будет ошибка, пока не определил в чем дело
+        <exclude name=".*secondTestMethod.*"/>
+        </methods>
+        </class>
+        </classes>
+        </test>
+
+<test name="SecondTest" >
+<classes>
+    <class name="com.dice.classTwo"></class>
+</classes>
+</test>
+
+-->

@@ -37,7 +37,7 @@ public class LogInPage extends BasePageObject<LogInPage> {
     }
 
     public String getLogInErrorMessage(){
-        waitForVisabilityOf(errorMessage, 10);
+        waitForVisabilityOf(errorMessage, 30);
         return getText(errorMessage);
 
     }
